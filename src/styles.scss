@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inika&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('./styles/normalize.css');
+
+// Colors
+$green: #499A18;
+$orange: #E06733;
+$light-gray: #717171;
+$dark-gray: #636060;
+$bg-section: #EDF2EC;
+$links-nav: #010201;
+$white: #FFF;
+
+// Fonts
+$inika: 'Inika', serif;
+$inter: 'Inter', sans-serif;
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.btn {
+    font-family: $inter;
+    border-radius: 10px;
+    border: 2px solid #E06733;
+    background: rgba(224, 103, 51, 0.00);
+    padding: 14px 27px;
+    transition: all .2s ease-in-out;
+    text-transform: uppercase;
+    font-weight: 400;
+
+    &:hover {
+        background: #E06733;
+        color: $white;
+    }
+}
+
+.header {
+    padding: 42px 110px;
+    font-family: $inika;
+    background-color: $bg-section;
+
+    &__logo {
+
+
+        p {
+            margin: 5px 0 0 0;
+        }
+    }
+}
+
+.nav {
+    margin-left: auto;
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item.active {
+        color: $orange;
+    }
+}
