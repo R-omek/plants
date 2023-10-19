@@ -1,3 +1,4 @@
 import './styles.scss'
-console.log('Hello from src')
+import { addFavicon } from './scripts/add-favicon'
 
+addFavicon()

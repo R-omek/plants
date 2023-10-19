@@ -29,6 +29,7 @@ $inter: 'Inter', sans-serif;
     transition: all .2s ease-in-out;
     text-transform: uppercase;
     font-weight: 400;
+    cursor: pointer;
 
     &:hover {
         background: #E06733;
@@ -57,7 +58,196 @@ $inter: 'Inter', sans-serif;
         list-style: none;
     }
 
+    &__item {
+        cursor: pointer;
+    }
+
     &__item.active {
         color: $orange;
     }
 }
+
+.top {
+   padding: 62px 109px;
+   background-color: $bg-section;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   column-gap: 5rem;
+
+    &__leafs {
+        transition: all .5s ease-in-out;
+
+        &-smallest {
+            transition: all .6s ease-in-out;
+            filter: blur(3px);
+        }
+
+        &-lg {
+            transition: all .6s ease-in-out;
+            transform: rotate(28deg) translate(4rem, -5rem);
+        }
+
+        &-md {
+            transition: all .6s ease-in-out;
+            transform: rotate(-2deg) translate(1rem, 1rem);
+        }
+
+        &-sm {
+            transition: all .6s ease-in-out;
+            transform: rotate(-77deg) translate(0rem, 0rem);
+        }
+
+        &-smallest-1 {
+            transform: rotate(53deg) translate(1rem, -1rem);
+        }
+        &-smallest-2 {
+            transform: rotate(134deg) translate(-10rem, -6rem);
+        }
+
+        &:hover {
+
+            .top__leafs {
+                &-lg {
+                    transform: rotate(0deg) translate(-1rem, -3rem);
+                }
+
+                &-md {
+                    transform: rotate(-43deg) translate(0rem, 0rem);
+                }
+
+                &-sm {
+                    transform: rotate(-52deg) translate(4rem, -4rem);
+                }
+
+                &-smallest-1 {
+                    transform: rotate(77deg) translate(-8rem, 0rem);
+                }
+
+                &-smallest-2 {
+                    transform: rotate(95deg) translate(-4rem, -3rem);
+                }
+            }
+        }
+    }
+
+    &__content {
+        font-family: $inter;
+        h1 {
+            color: $light-gray;
+            font-size: 45px;
+            font-weight: 700;
+            max-width: 549px;
+
+            span {
+                color: $green;
+            }
+        }
+
+        p {
+            color: $dark-gray;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 35px;
+            max-width: 525px;
+        }
+    }
+}
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+    padding: 94px 109px;
+    
+    h2 {
+        font-family: $inika;
+        color: $green;
+        font-size: 40px;
+        line-height: normal;
+
+        span {
+            color: $orange;
+        }
+    }
+
+    p {
+        font-family: $inter;
+        color: $dark-gray;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    img {
+        margin-left: auto;
+    }
+}
+
+.projects {
+    padding: 40px 109px 121px;
+    background-color: $bg-section;
+
+    &__top {
+
+        h2 {
+            font-family: $inika;
+            color: $green;
+            font-size: 40px;
+            max-width: 306px;
+        }
+
+        button {
+            color: $orange;
+        }
+
+        button.active {
+            color: $white;
+            background-color: $orange;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 117px;
+        row-gap: 55px;
+        margin-top: 90px;
+    }
+
+    &__item {
+        font-family: $inter;
+        border: 1px solid #E3E1D5;
+        width: fit-content;
+        border-radius: 20px;
+        overflow: hidden;
+        cursor: pointer;
+
+        h4 {
+            color: $orange;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: 16px;
+            color: $light-gray;
+        }
+
+        .projects__img-wrapper {
+            overflow: hidden;
+        }
+
+        img {
+            transform: scale(1);
+            transition: all .5s ease-in-out;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+

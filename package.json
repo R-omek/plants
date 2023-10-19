@@ -30,6 +30,8 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.2.0",
     "primeflex": "^3.3.1"
   }
 }
