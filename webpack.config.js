@@ -32,7 +32,7 @@ module.exports = ({develop}) => ({
         exclude: /node_modules/,
       },
       {
-        test: /\.(?:ico|gif|pnj|jpg|jpeg)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource'
       },
       {
@@ -47,6 +47,10 @@ module.exports = ({develop}) => ({
         test: /\.s[ac]ss$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       },
+      ,{
+        test: /\.html$/i,
+        loader: 'html-loader'
+      }
     ],
   },
   resolve: {
@@ -54,7 +58,6 @@ module.exports = ({develop}) => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Demo webpack',
       template: './src/index.html'
     }),
     new MiniCssExtractPlugin({
