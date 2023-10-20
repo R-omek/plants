@@ -35,6 +35,11 @@ $inter: 'Inter', sans-serif;
         background: #E06733;
         color: $white;
     }
+
+    &:active {
+        transform: scale(0.9);
+        transition: transform .1s ease-in;
+    }
 }
 
 .header {
@@ -109,6 +114,7 @@ $inter: 'Inter', sans-serif;
             .top__leafs {
                 &-lg {
                     transform: rotate(0deg) translate(-1rem, -3rem);
+                    filter: blur(0);
                 }
 
                 &-md {
@@ -125,6 +131,7 @@ $inter: 'Inter', sans-serif;
 
                 &-smallest-2 {
                     transform: rotate(95deg) translate(-4rem, -3rem);
+                    filter: blur(0);
                 }
             }
         }
@@ -220,6 +227,8 @@ $inter: 'Inter', sans-serif;
         overflow: hidden;
         cursor: pointer;
         margin: 0 auto;
+        transform: scale(1);
+        transition: all .5s ease-in-out;
 
         h4 {
             color: $orange;
@@ -248,6 +257,11 @@ $inter: 'Inter', sans-serif;
                 transform: scale(1.2);
             }
         }
+    }
+
+    .blur-scale {
+        filter: blur(2px);
+        transform: scale(0.8);
     }
 }
 
