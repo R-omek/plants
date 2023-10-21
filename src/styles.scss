@@ -15,9 +15,21 @@ $white: #FFF;
 $inika: 'Inika', serif;
 $inter: 'Inter', sans-serif;
 
+* {
+    scroll-padding-top: 134px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 .container {
     max-width: 1440px;
     margin: 0 auto;
+}
+
+img {
+    user-select: none;
 }
 
 .btn {
@@ -46,13 +58,20 @@ $inter: 'Inter', sans-serif;
     padding: 42px 110px;
     font-family: $inika;
     background-color: $bg-section;
+    margin-bottom: -1px;
+    position: sticky;
+    top: 0;
 
     &__logo {
-
+        cursor: pointer;
 
         p {
             margin: 5px 0 0 0;
         }
+    }
+    a {
+        text-decoration: none;
+        color: #000;
     }
 }
 
@@ -65,9 +84,14 @@ $inter: 'Inter', sans-serif;
 
     &__item {
         cursor: pointer;
+        transition: opacity .2s ease-in-out;
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 
-    &__item.active {
+    &__item.active a {
         color: $orange;
     }
 }
@@ -81,6 +105,7 @@ $inter: 'Inter', sans-serif;
 
     &__leafs {
         transition: all .5s ease-in-out;
+        user-select: none;
 
         &-smallest {
             transition: all .6s ease-in-out;
@@ -252,7 +277,7 @@ $inter: 'Inter', sans-serif;
             height: 100%;
         }
 
-        &:hover {
+        &:not(.blur-scale):hover {
             img {
                 transform: scale(1.2);
             }
@@ -287,13 +312,78 @@ $inter: 'Inter', sans-serif;
     }
 
     &__select {
-        padding: 17px 40px;
+        padding: 16px 40px;
         background-color: $bg-section;
         font-size: 20px;
-        font-weight: 700;
         border-radius: 20px;
-        width: 250px;
+        width: 170px;
+        height: 19px;
         cursor: pointer;
+        transition: all .3s ease-in-out;
+        font-family: $inter;
+        overflow: hidden;
+
+        span {
+            font-weight: 700;
+        }
+
+        &.opened {
+            background-color: #D6E7D2;
+            height: 154px;
+
+        }
+    }
+
+    &__desc {
+        margin-top: 13px;
+        border-top: 0.5px solid #AEA1A1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        row-gap: 10px;
+            
+        p {
+            font-size: 12px;
+            color: $light-gray;
+            line-height: 12px;
+            margin: 6px 0 0 0;
+        }
+
+        h4 {
+            color: $orange;
+            margin: 0;
+
+            span {
+                font-size: 14px;
+                color: #000;
+                font-weight: 400;
+            }
+        }
+
+        button {
+            border-radius: 10px;
+            background: #FFF;
+            border: none;
+            padding: 5px 20px;
+            color: $light-gray;
+            text-transform: capitalize;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 5px;
+            transform: scale(1);
+            transition: transform .1s ease-in;
+
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+    }
+
+    &__underline {
+        height: 0.5px;
+        width: 100%;
+        background: #AEA1A1;
     }
 
     &__right {

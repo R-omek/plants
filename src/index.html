@@ -8,24 +8,36 @@
 </head>
 <body class="container">
     <header class="header flex align-items-center">
-        <div class="header__logo flex">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.52667 20.9466L10.9212 3.66409C10.9212 3.66409 3.57596 7.00909 2.00199 10.9116C0.428017 14.8141 0.927102 18.4038 2.00201 20.9466" stroke="#499A18" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M1.99646 20.9925C1.99646 20.9925 27.7102 -8.60087 19.3157 4.2216C10.9212 17.0441 20.1707 6.63145 15.4973 14.0678C10.824 21.5041 1.99646 20.9925 1.99646 20.9925Z" stroke="#499A18" stroke-linejoin="round"/>
-            </svg>
-            <p>Plants</p>
-        </div>
+        <a href="#main">
+            <div class="header__logo flex">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.52667 20.9466L10.9212 3.66409C10.9212 3.66409 3.57596 7.00909 2.00199 10.9116C0.428017 14.8141 0.927102 18.4038 2.00201 20.9466" stroke="#499A18" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1.99646 20.9925C1.99646 20.9925 27.7102 -8.60087 19.3157 4.2216C10.9212 17.0441 20.1707 6.63145 15.4973 14.0678C10.824 21.5041 1.99646 20.9925 1.99646 20.9925Z" stroke="#499A18" stroke-linejoin="round"/>
+                </svg>
+                <p>Plants</p>
+            </div>
+        </a>
         <nav class="nav">
             <ul class="nav__list flex gap-5">
-                <li class="nav__item active">Home</li>
-                <li class="nav__item">About us</li>
-                <li class="nav__item">Service</li>
-                <li class="nav__item">Price</li>
-                <li class="nav__item">Contacts</li>
+                <li class="nav__item active">
+                    <a href="#main">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about-us">About us</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#service">Service</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#price">Price</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contacts">Contacts</a>
+                </li>
             </ul>
         </nav>
     </header>
-    <section class="top">
+    <section id="main" class="top">
             <div class="top__leafs flex flex-column align-items-start">
                 <div>
                     <img class="top__leafs-lg" src="./assets/leaf-1.png" alt="leaf">
@@ -46,7 +58,7 @@
             </div>
     </section>
 
-    <section class="about">
+    <section id="about-us" class="about">
         <div class="about_content">
             <h2>We are <span>professional experienced</span> gardeners</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
@@ -54,7 +66,7 @@
         <img src="./assets/vazon.jpg" alt="vazon">
     </section>
 
-    <section class="projects">
+    <section id="service"  class="projects">
         <div class="projects__top flex align-items-center gap-8">
             <h2>Service and our projects</h2>
             <div class="flex align-items-center gap-6 ml-8">
@@ -109,33 +121,54 @@
         </div>
     </section>
 
-    <section class="prices">
+    <section id="price" class="prices">
         <div class="prices__left">
             <h2>Prices</h2>
             <div class="prices__selects flex flex-column gap-5">
-                <div class="prices__select flex align-items-center justify-content-between">
-                    <span>Basics</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="8" cy="8.00635" r="8" fill="#D9D9D9"/>
-                        <path d="M8.00003 9.00656L6.00003 7.00667" stroke="#717171" stroke-width="0.5" stroke-linecap="round"/>
-                        <path d="M8 9.00635L10 7.00635" stroke="#717171" stroke-width="0.5" stroke-linecap="round"/>
-                    </svg> 
+                <div class="prices__select">
+                    <div class="flex align-items-center justify-content-between">
+                        <span>Basics</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="8.00635" r="8" fill="#D9D9D9"/>
+                            <path d="M8.00003 9.00656L6.00003 7.00667" stroke="#717171" stroke-width="0.5" stroke-linecap="round"/>
+                            <path d="M8 9.00635L10 7.00635" stroke="#717171" stroke-width="0.5" stroke-linecap="round"/>
+                        </svg> 
+                    </div>
+                    <div class="prices__desc">
+                        <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                        <h4>$15 <span>/ per hour</span></h4>
+                        <button class="prices__order-btn">Order</button>
+                    </div>
                 </div>
-                <div class="prices__select flex align-items-center justify-content-between">
-                    <span>Standard</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="8" cy="8.00635" r="8" fill="#D9D9D9"/>
-                        <path d="M8.00003 9.00656L6.00003 7.00667" stroke="#717171" stroke-width="0.5" stroke-linecap="round"/>
-                        <path d="M8 9.00635L10 7.00635" stroke="#717171" stroke-width="0.5" stroke-linecap="round"/>
-                    </svg> 
+                <div class="prices__select">
+                    <div class="flex align-items-center justify-content-between">
+                        <span>Standard</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="8.00635" r="8" fill="#D9D9D9"/>
+                            <path d="M8.00003 9.00656L6.00003 7.00667" stroke="#717171" stroke-width="0.5" stroke-linecap="round"/>
+                            <path d="M8 9.00635L10 7.00635" stroke="#717171" stroke-width="0.5" stroke-linecap="round"/>
+                        </svg> 
+                    </div>
+                    <div class="prices__desc">
+                        <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                        <h4>$25 <span>/ per hour</span></h4>
+                        <button class="prices__order-btn">Order</button>
+                    </div>
                 </div>
-                <div class="prices__select flex align-items-center justify-content-between">
-                    <span>Pro care</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="8" cy="8.00635" r="8" fill="#D9D9D9"/>
-                        <path d="M8.00003 9.00656L6.00003 7.00667" stroke="#717171" stroke-width="0.5" stroke-linecap="round"/>
-                        <path d="M8 9.00635L10 7.00635" stroke="#717171" stroke-width="0.5" stroke-linecap="round"/>
-                    </svg> 
+                <div class="prices__select">
+                    <div class="flex align-items-center justify-content-between">
+                        <span>Pro care</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="8.00635" r="8" fill="#D9D9D9"/>
+                            <path d="M8.00003 9.00656L6.00003 7.00667" stroke="#717171" stroke-width="0.5" stroke-linecap="round"/>
+                            <path d="M8 9.00635L10 7.00635" stroke="#717171" stroke-width="0.5" stroke-linecap="round"/>
+                        </svg> 
+                    </div>
+                    <div class="prices__desc">
+                        <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                        <h4>$35 <span>/ per hour</span></h4>
+                        <button class="prices__order-btn">Order</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -155,7 +188,7 @@
         </div>
     </section>
 
-    <section class="contact-us">
+    <section id="contacts" class="contact-us">
         <img src="./assets/contact_woman-1.png" alt="women">
         <h2>Contact us</h2>
         <div class="contact-us__select flex align-items-center justify-content-between">
@@ -167,5 +200,6 @@
             </svg>  
         </div>
     </section>
+        
 </body>
 </html>
