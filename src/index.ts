@@ -75,7 +75,7 @@ function toggleProjectsBtn(target: HTMLButtonElement) {
 const PRICE_SELECTS: NodeListOf<HTMLDivElement> = document.querySelectorAll('.prices__select')
 
 PRICE_SELECTS.forEach((select: HTMLDivElement) => {
-    select.children[0].addEventListener('click', () => {
+    select.addEventListener('click', () => {
         PRICE_SELECTS.forEach(sel =>  {
             sel.classList.contains('opened') ? sel.children[0].replaceChild(toggledPriceArrow(sel), sel.children[0].children[1]) : null
             select === sel ? null : sel.classList.remove('opened')
