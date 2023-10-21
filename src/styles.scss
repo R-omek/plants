@@ -61,6 +61,7 @@ img {
     margin-bottom: -1px;
     position: sticky;
     top: 0;
+    z-index: 1;
 
     &__logo {
         cursor: pointer;
@@ -106,6 +107,8 @@ img {
     &__leafs {
         transition: all .5s ease-in-out;
         user-select: none;
+        position: relative;
+        z-index: 2;
 
         &-smallest {
             transition: all .6s ease-in-out;
