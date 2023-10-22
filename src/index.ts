@@ -80,6 +80,9 @@ let currentIndex = 0
 let animationStarted = false;
 
 function typeLetters() {
+    if (!animationStarted) {
+        return
+    }
     if (currentIndex < textToType.length) {
         PRICES_TITLE.children[0].textContent += textToType[currentIndex];
         currentIndex++;
@@ -90,14 +93,16 @@ function typeLetters() {
             currentIndex--;
             setTimeout(typeLetters, 500);
         }, 200)
+
+        setTimeout(() => animationStarted = false, 3000)
     }
 }
 
 function startAnimation() {
     if (!animationStarted) {
         PRICES_TITLE.children[0].textContent = ''
-        typeLetters();
         animationStarted = true;
+        typeLetters();
     }
 }
 
