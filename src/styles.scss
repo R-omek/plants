@@ -172,6 +172,14 @@ img {
             font-size: 45px;
             font-weight: 700;
             max-width: 549px;
+            transition: all .9s ease;
+            transform: translateX(200px);
+            opacity: 0;
+
+            &.animated {
+                transform: translateX(0);
+                opacity: 1;
+            }
 
             span {
                 color: $green;
@@ -184,6 +192,14 @@ img {
             font-weight: 400;
             line-height: 35px;
             max-width: 525px;
+            transition: all .6s linear;
+            transform: translateY(100px);
+            opacity: 0;
+
+            &.animated {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     }
 }
@@ -199,6 +215,14 @@ img {
         color: $green;
         font-size: 40px;
         line-height: normal;
+        transition: all .9s ease;
+        transform: translateX(-200px);
+        opacity: 0;
+
+        &.animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
 
         span {
             color: $orange;
@@ -210,10 +234,26 @@ img {
         color: $dark-gray;
         font-size: 20px;
         line-height: 30px;
+        transition: all .9s ease;
+        transform: translateY(150px);
+        opacity: 0;
+
+        &.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     img {
         margin-left: auto;
+        transition: all .9s ease;
+        transform: scale(0.5);
+        opacity: 0;
+
+        &.animated {
+            transform: scale(1);
+            opacity: 1;
+        }
     }
 }
 
@@ -228,6 +268,15 @@ img {
             color: $green;
             font-size: 40px;
             max-width: 306px;
+            transition: all .9s ease;
+            transform: translateX(-200px);
+            opacity: 0;
+
+            &.animated {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            
         }
 
         button {
@@ -255,8 +304,15 @@ img {
         overflow: hidden;
         cursor: pointer;
         margin: 0 auto;
-        transform: scale(1);
+        transform: scale(0.5);
+        opacity: 0;
         transition: all .5s ease-in-out;
+
+        &.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
 
         h4 {
             color: $orange;
@@ -304,6 +360,14 @@ img {
         h2 {
             font-size: 40px;
             font-weight: 700;
+            transition: all .3s ease-in;
+            opacity: 0;
+            transform: translateX(-100px);
+
+            &.animated {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
     }
 
@@ -396,6 +460,14 @@ img {
             font-weight: 700;
             line-height: 50px;
             max-width: 452px;
+            transition: all .3s ease-in;
+            opacity: 0;
+            transform: translateX(100px);
+
+            &.animated {
+                opacity: 1;
+                transform: translateX(0);
+            }
 
             span {
                 color: $green;
@@ -432,6 +504,14 @@ img {
         font-size: 40px;
         color: $green;
         margin-left: 113px;
+        transition: all .3s ease-in;
+        opacity: 0;
+        transform: translateY(50px);
+
+        &.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     &__select {

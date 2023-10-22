@@ -111,3 +111,25 @@ function toggledPriceArrow(select: HTMLDivElement) {
 
 // Contact us dropdown
 
+const SCROLL_ELEMENTS: any = document.querySelectorAll('.scroll-animation')
+
+function checkScroll() {
+    SCROLL_ELEMENTS.forEach((el: any) => {
+        const elementTop = el.getBoundingClientRect().top;
+        console.log(el.getBoundingClientRect().bottom)
+        console.log(window.innerHeight)
+        if (elementTop < window.innerHeight - 50) {
+            animateElement(el)
+        } 
+        if (el.getBoundingClientRect().bottom > window.innerHeight + 400) {
+            el.classList.remove('animated')
+        }
+    })
+}
+
+function animateElement(element: any) {
+    element.classList.add('animated')
+}
+
+window.addEventListener("scroll", checkScroll);
+checkScroll();
