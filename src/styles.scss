@@ -268,15 +268,6 @@ img {
             color: $green;
             font-size: 40px;
             max-width: 306px;
-            transition: all .9s ease;
-            transform: translateX(-200px);
-            opacity: 0;
-
-            &.animated {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            
         }
 
         button {
@@ -360,14 +351,6 @@ img {
         h2 {
             font-size: 40px;
             font-weight: 700;
-            transition: all .3s ease-in;
-            opacity: 0;
-            transform: translateX(-100px);
-
-            &.animated {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
     }
 
@@ -459,18 +442,12 @@ img {
             font-size: 40px;
             font-weight: 700;
             line-height: 50px;
-            max-width: 452px;
-            transition: all .3s ease-in;
-            opacity: 0;
-            transform: translateX(100px);
-
-            &.animated {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            max-width: 462px;
 
             span {
                 color: $green;
+                width: 210px;
+                display: inline-block;
             }
         }
 
@@ -504,24 +481,13 @@ img {
         font-size: 40px;
         color: $green;
         margin-left: 113px;
-        transition: all .3s ease-in;
-        opacity: 0;
-        transform: translateY(50px);
-
-        &.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
 
     &__select {
         width: 395px;
-        padding: 0 35px 0 20px;
-        height: 50px;
-        background-color: #D6E7D2;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         margin-top: 148px;
-        cursor: pointer;
+        height: 50px;
 
         p {
             color: $light-gray;
@@ -530,6 +496,34 @@ img {
             text-transform: capitalize;
             margin: 0;
         }
+
+        &.opened {
+            box-shadow: none;
+        }
+
+        &-name {
+            padding: 13.5px 20px;
+            cursor: pointer;
+            background: #D6E7D2;
+    
+            &:active {
+                background: #C1E698;
+            }
+
+            &.opened {
+                background: #C1E698;
+            }
+        }
+    
+        &-cities {
+            background: #DCE9D9;
+            height: 0;
+            transition: all .3s ease-in-out;
+            &.opened {
+                height: 234px;
+            }
+        }
     }
+
 }
 

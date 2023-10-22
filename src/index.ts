@@ -73,6 +73,42 @@ function toggleProjectsBtn(target: HTMLButtonElement) {
 // Prices animation
 
 const PRICE_SELECTS: NodeListOf<HTMLDivElement> = document.querySelectorAll('.prices__select')
+const PRICES_TITLE: any = document.querySelector('.prices__title')
+
+const textToType = PRICES_TITLE?.children[0].textContent
+let currentIndex = 0
+let animationStarted = false;
+
+function typeLetters() {
+    if (currentIndex < textToType.length) {
+        PRICES_TITLE.children[0].textContent += textToType[currentIndex];
+        currentIndex++;
+        setTimeout(typeLetters, 150); 
+    } else {
+        setTimeout(() => {
+            PRICES_TITLE.children[0].textContent = PRICES_TITLE.children[0].textContent.slice(0, currentIndex - 1);
+            currentIndex--;
+            setTimeout(typeLetters, 500);
+        }, 200)
+    }
+}
+
+function startAnimation() {
+    if (!animationStarted) {
+        PRICES_TITLE.children[0].textContent = ''
+        typeLetters();
+        animationStarted = true;
+    }
+}
+
+const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+        startAnimation();
+        observer.disconnect();
+    }
+});
+observer.observe(PRICES_TITLE);
+
 
 PRICE_SELECTS.forEach((select: HTMLDivElement) => {
     select.addEventListener('click', () => {
@@ -109,19 +145,28 @@ function toggledPriceArrow(select: HTMLDivElement) {
     return div.children[0]
 }
 
-// Contact us dropdown
+// Contact-us dropdown
 
+const CONTACT_SELECT = document.querySelector('.contact-us__select')
+
+CONTACT_SELECT?.children[0].addEventListener('click', () => {
+    CONTACT_SELECT.classList.toggle('opened')
+    CONTACT_SELECT?.children[0].classList.toggle('opened')
+    CONTACT_SELECT?.children[1].classList.toggle('opened')
+})
+
+
+// Scroll animations
 const SCROLL_ELEMENTS: any = document.querySelectorAll('.scroll-animation')
 
 function checkScroll() {
     SCROLL_ELEMENTS.forEach((el: any) => {
         const elementTop = el.getBoundingClientRect().top;
-        console.log(el.getBoundingClientRect().bottom)
-        console.log(window.innerHeight)
+        const elementBottom = el.getBoundingClientRect().bottom;
         if (elementTop < window.innerHeight - 50) {
             animateElement(el)
         } 
-        if (el.getBoundingClientRect().bottom > window.innerHeight + 400) {
+        if (elementBottom > window.innerHeight + 400) {
             el.classList.remove('animated')
         }
     })
